@@ -1,0 +1,23 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: password
+  host: 127.0.0.1
+  port: 13306
+
+development:
+  <<: *default
+  database: linebot_todo_development
+
+test:
+  <<: *default
+  database: linebot_todo_test
+
+production:
+  <<: *default
+  host : <%= ENV['DB_HOSTNAME'] %>
+  database: <% ENV['DB_NAME'] %>
+  username: <% ENV['DB_USERNAME'] %>
+  passowrd: <% ENV['DB_PASSWORD'] %>
