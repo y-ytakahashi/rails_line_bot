@@ -42,6 +42,7 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'popper_js','~> 1.12.3'
 gem 'tether-rails'
+gem 'line-bot-api'
 
 
 
