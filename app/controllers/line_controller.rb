@@ -17,7 +17,7 @@ class LineController < ApplicationController
         end
 
         # Lineで送られてきたメッセージデータ eventsというデータ構造に変更
-        events = client.parse_events_form(body)
+        events = client.parse_events_from(body)
 
         # events の中身をなめる
         events.each { |event|
