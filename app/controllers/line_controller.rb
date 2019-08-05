@@ -58,7 +58,7 @@ class LineController < ApplicationController
     #Lineボットを生成して返すプライベートメソッドの定義
     private 
     def client
-        @client ||= Line::Bot::Client.new {|config|
+        @client ||= Line::Bot::client.new {|config|
             # サーバーに事前に登録したチャンネルシークレットとチャンネルトークンをセット
             config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
             config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
