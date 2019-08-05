@@ -12,7 +12,7 @@ class LineController < ApplicationController
 
         #line 以外からのアクセスの場合、エラーを返す
         signature = request.env['HTTP_X_LINE_SIGNATURE']
-        unless clinet.validate_signature(bodym signature)
+        unless clinet.validate_signature(body, signature)
             head :bad_request
         end
 
