@@ -26,7 +26,7 @@ class LineController < ApplicationController
             when Line::Bot::Event::Message
                 # メッセージのタイプがテキストだったら（スタンプなどではなく）
                 case event.type
-                when Line::Bot::Event::Message::Text
+                when Line::Bot::Event::MessageType::Text
                     #メッセージの文字列を取得して、変数taskに代入
                     task = event['message']['text']
 
