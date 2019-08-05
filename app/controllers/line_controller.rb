@@ -4,7 +4,7 @@ require 'line/bot'
 class LineController < ApplicationController
     # Rails disable security
 
-    protect_form_forgery :except =>[:bot]
+    protect_from_forgery :except => [:bot]
 
     def bot 
         # line で送られてきたメッセージデータを取得する
