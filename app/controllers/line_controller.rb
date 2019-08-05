@@ -23,7 +23,7 @@ class LineController < ApplicationController
         events.each { |event|
             # eventがメッセージだったら
             case event 
-            when Line::bot::Event::Message
+            when Line::Bot::Event::Message
                 # メッセージのタイプがテキストだったら（スタンプなどではなく）
                 case event.type
                 when Line::Bot::Event::Message::Text
