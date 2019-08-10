@@ -36,7 +36,7 @@ class LineController < ApplicationController
                         Task.create!(task: task)
                         # 登録に成功した場合、登録した旨をLINEで返す
                         message = {
-                            type: 'text',
+                            type: 'button',
                             text: "タスク「#{task}」を登録しました。！"
                         }
                         client.reply_message(event['replyToken'],message)
