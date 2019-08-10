@@ -36,22 +36,11 @@ class LineController < ApplicationController
                         Task.create!(task: task)
                         # 登録に成功した場合、登録した旨をLINEで返す
                         message = {
-                            type: 'text',
+                            type: 'buttons',
                             text: "タスク「#{task}」を登録しました。！"
                         }
 
-                        message2 = array('type'    => 'buttons',
-                            'thumbnailImageUrl' => 'https://d1f5hsy4d47upe.cloudfront.net/79/79e452da8d3a9ccaf899814db5de9b76_t.jpeg',
-                            'title'   => 'タイトル最大40文字' ,
-                            'text'    => 'テキストメッセージ。タイトルがないときは最大160文字、タイトルがあるときは最大60文字',
-                            'actions' => array(
-                                           array('type'=>'message', 'label'=>'ラベルです', 'text'=>'アクションを実行した時に送信されるメッセージ' )
-                                          )
-                          );
-          
-
                         client.reply_message(event['replyToken'],message)
-                        client.reply_message(event['replyToken'],message2)
 
                     rescue
                         # 登録に失敗した場合、登録に失敗した旨をLINEで返す
