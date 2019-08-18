@@ -36,7 +36,7 @@ class LineController < ApplicationController
                         Task.create!(task: task)
                         # 登録に成功した場合、登録した旨をLINEで返す
                         message = {
-                            type: 'buttons',
+                            type: 'text',
                             text: "タスク「#{task}」を登録しました。！"
                         }
 
@@ -65,4 +65,11 @@ class LineController < ApplicationController
             config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
         }
     end
+
+    def template
+        {
+
+        }
+    end
+
 end
